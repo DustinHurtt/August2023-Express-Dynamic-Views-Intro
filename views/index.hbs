@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My first view</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/cities">Cities</a>
+    </nav>
+
+    <h1>Hello {{name}}!</h1>
+    <p>Welcome to the {{bootcamp}}!!</p>
+
+    {{#with address}}
+        <p>{{street}}, {{number}}</p>
+    {{/with}}
+
+    <h1>Hello {{name}}!</h1>
+
+    {{#if lastName}}
+        <h2>This won't be displayed!!</h2>
+    {{/if}}
+
+
+    {{#if address}}
+        <h2>This won't be displayed!!</h2>
+
+    {{else}}
+
+        <h2>This will be displayed because the "address" property does not exist!!</h2>
+
+    {{/if}}
+
+    {{#unless address}}
+        <h3>WARNING: We can't find the address!</h3>
+    {{/unless}}
+
+    <ul>
+        {{#each cities}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+
+
+    {{#each data}}
+        <p>{{@key}}: {{this}}</p>
+    {{/each}}
+
+
+  <h1>Ironhacker Be Like</h1>
+  <img src="https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif">
+</body>
+</html>
